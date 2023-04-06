@@ -13,6 +13,7 @@ function connect_to_db()
 }
 
 
+// register user
 function register($values=array())
 
 {
