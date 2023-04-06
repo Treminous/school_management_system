@@ -17,10 +17,6 @@ print_r("Hi, " .($data['student_fname']));
 }
 
 
-
-
-
-
 function connect_to_db()
 {
  return (mysqli_connect('localhost','root','','academic'));
