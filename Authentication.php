@@ -73,18 +73,22 @@ function login($values=array())
     $adm=$values['adm'];
 
     // check if user is registered
-    $query1="SELECT * FROM student WHERE  student_id LIKE '$adm' AND student_email LIKE '$email'  ";
+    $query1="SELECT * FROM student WHERE  student_id LIKE '$adm' AND student_email LIKE '$email'  LIMIT=1";
    
     $query2=mysqli_query(connect_to_db(),$query1);
 
     // check number of records
+
+    $check_user=mysqli_num_rows($query2);
     
-    if($query2)
+    if($check_user)
       {     
          session_start();
-         $name=$_SESSION['fname'];
-           echo "<script>alert('Login successful')</script>";
-           echo "Hello, $name";
+         $_SESSION['adm']= $adm;
+        echo "<script>alert('Login successful')</script>";
+
+
+           
        }
        
      else
