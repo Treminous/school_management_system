@@ -1,7 +1,9 @@
 <?php
+
 $array_data=$_POST;
 
 register($array_data);
+login();
 
 
 function connect_to_db()
@@ -14,14 +16,17 @@ function connect_to_db()
 function register($values=array())
 
 {
+    if(isset($_POST['register']))
+   {
     // Check for existence of user
 $email=$values['email'];
 if((mysqli_num_rows(mysqli_query(connect_to_db(),"SELECT * FROM  student WHERE student_email  LIKE '$email'"))))
 
 {
     echo "<script>alert('User already exists')</script>";
- header('Refresh:0;index.php');
+    header('Refresh:0;index.php');
 }
+//Register new user
 else
  
  {
@@ -29,13 +34,19 @@ else
     $fname=$values['fname'];
     $sname=$values['sname'];
     $surname=$values['surname'];
-    $email=$values['email'];;
-$query="INSERT INTO student ('student_id','student_fname','student_sname','student_surname',student_email) VALUES('$adm','$fname','$sname','$surname','$email')";
-//    / INSERT INTO `student` (`student_id`, `student_fname`, `student_sname`, `student_surname`, `student_email`) VALUES ('c0m/005', 'mary', 'chemu', 'Chemeli', 'mary@gmail.com');
-     if($query)
+    $email=$values['email'];
+//$query="INSERT INTO student ('student_id','student_fname','student_sname','student_surname',student_email) VALUES('$adm','$fname','$sname','$surname','$email')";
+$query="INSERT INTO `student` (`student_id`, `student_fname`, `student_sname`, `student_surname`, `student_email`) VALUES ('$adm','$fname','$sname','$surname','$email')";
+ $result=mysqli_query(connect_to_db(),$query); 
+if($result)
    {
          echo "<script>alert('Registration succesful')</script>";
          header('Refresh:0;index.php');
+     }
+     else
+     {
+        echo "<script>alert('Registration failed please try again')</script>";
+        header('Refresh:0 register.php');
      }
  
 
@@ -43,6 +54,57 @@ $query="INSERT INTO student ('student_id','student_fname','student_sname','stude
      
 }
 }
+}
+
+ 
+function login()
+{ 
+     if(isset($_POST['login']))
+     {
+    
+
+        //capture user data
+     $fname=$_POST['fname'];
+    $email=$_POST['email'];
+    $adm=$_POST['adm'];
+
+    // check if user is registered
+    $query1="SELECT * FROM student WHERE  student_id LIKE '$adm' AND student_email LIKE '$email'  ";
+   
+    $query2=mysqli_query(connect_to_db(),$query1);
+
+    // check number of records
+    
+    if($query2)
+      {     
+         session_start();
+         $name=$_SESSION['fname'];
+           echo "<script>alert('Login successful')</script>";
+           echo "Hello, $name";
+       }
+       
+     else
+
+          {
+              echo "<script>alert('admission number or email does not match')</script>";
+          }
+   }
+   
+     
+        
+     else
+        {
+            
+            
+         echo "<script>alert('User does not exist')</script>";
+          header('Refresh:0;register.php');
+            
+        }
+}
+
+
+
+
 
 
 

@@ -1,10 +1,10 @@
 <?php
 
 $conn=mysqli_connect('localhost','root','','academic');
-if($conn)
-{
-    echo "<script>alert('connected')</script>";
-}
+// if($conn)
+// {
+//     echo "<script>alert('connected')</script>";
+// }
 
 
 

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +11,7 @@
 <center>
   <fieldset   style="width: 400px; height:500px; color:blue;border:5px solid #0000FF; border-radius:20px;">
 
-  <form action="Authentication.php" method="post">
+  <form action="Authentication.php" method="POST">
     <table  >
 <h1> Register Here</h1>
     <label for="adm">Admission number:</label>&nbsp;&nbsp;&nbsp;
@@ -27,7 +28,7 @@
     <input type="text" name="age"  required ><br><br><br>
     
     <a href="index.php" style="color:#0000FF;text-decoration:none;">Already registered?</a><br><br>
-    <input style="border-radius: 5px; width:100px;height: 30px;background-color: #0000FF;border:5px solid #0000FF" type="submit" name="button" value="Register">
+    <input style="border-radius: 5px; width:100px;height: 30px;background-color: #0000FF;border:5px solid #0000FF" type="submit" name="register" value="Register">
    
 </table>
 

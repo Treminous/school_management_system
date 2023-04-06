@@ -23,7 +23,7 @@
     <input type="mail" name="email"  required ><br><br><br>
     <a href="register.php" style="color:#0000FF;text-decoration:none;">Create Account</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <a href="password.php" style="color:#0000FF;text-decoration:none;">Forgot Password</a><br><br><br>
-    <input style="border-radius: 5px; width:100px;height: 30px;background-color: #0000FF;border:5px solid #0000FF" type="submit" name="button" value="Login">
+    <input style="border-radius: 5px; width:100px;height: 30px;background-color: #0000FF;border:5px solid #0000FF" type="submit" name="login" value="Login">
     
     </table>
 
