@@ -73,29 +73,36 @@ function login($values=array())
     $adm=$values['adm'];
 
     // check if user is registered
-    $query1="SELECT * FROM student WHERE  student_id LIKE '$adm' AND student_email LIKE '$email'  LIMIT=1";
+    $query1="SELECT * FROM student WHERE  student_id LIKE '$adm' AND student_email LIKE '$email'";
    
     $query2=mysqli_query(connect_to_db(),$query1);
 
     // check number of records
-
-    $check_user=mysqli_num_rows($query2);
     
-    if($check_user)
-      {     
-         session_start();
+    
+    if($query2)
+      {   
+     
+        $check_user=mysqli_num_rows($query2); 
+
+        if($check_user){
+
+            session_start();
          $_SESSION['adm']= $adm;
         echo "<script>alert('Login successful')</script>";
+
+        }
+        else
+
+        {
+            echo "<script>alert('admission number or email does not match')</script>";
+        }
 
 
            
        }
        
-     else
-
-          {
-              echo "<script>alert('admission number or email does not match')</script>";
-          }
+    
    }
    
 
