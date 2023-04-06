@@ -6,7 +6,7 @@ if(isset($array_data['register']))
    {
 
     register($array_data);
-    die();
+   die();
    }
 
 login($array_data);
@@ -26,7 +26,8 @@ function register($values=array())
     
     // Check for existence of user
 $email=$values['email'];
-if((mysqli_num_rows(mysqli_query(connect_to_db(),"SELECT * FROM  student WHERE student_email  LIKE '$email'"))))
+$adm=$values['adm'];
+if((mysqli_num_rows(mysqli_query(connect_to_db(),"SELECT * FROM  student WHERE student_id LIKE '$adm'  OR student_email  LIKE '$email' "))))
 
 {
     echo "<script>alert('User already exists')</script>";
@@ -57,8 +58,8 @@ if($result)
        }
        else
      {
-        echo "<script>alert('Registration failed please try again')</script>";
-        header('Refresh:0 register.php');
+        echo "<script>alert('Password and confirm password mismatch please try again')</script>";
+        header('Refresh:0; register.php');
      }
      }
  
@@ -76,11 +77,11 @@ function login($values=array())
     
 
         //capture user data
-    $email=$values['email'];
+    $password=$values['password'];
     $adm=$values['adm'];
 
     // check if user is registered
-    $query1="SELECT * FROM student WHERE  student_id LIKE '$adm' AND student_email LIKE '$email'";
+    $query1="SELECT * FROM student WHERE  student_id LIKE '$adm' AND student_password LIKE '$password'";
    
     $query2=mysqli_query(connect_to_db(),$query1);
 
@@ -99,17 +100,17 @@ function login($values=array())
         echo "<script>alert('Login successful')</script>";
         header('Refresh:0; Home.php');
 
-        }
-        else
-
-        {
-            echo "<script>alert('admission number or email does not match')</script>";
-        }
-
+        }      
 
            
-       }
        
+       else
+
+       {
+           echo "<script>alert('admission number or password does not match')</script>";
+           header('Refresh:0;index.php');
+       }
+    }
     
    }
    
