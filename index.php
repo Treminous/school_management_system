@@ -9,7 +9,7 @@
 </head>
 <body>
     <center>
-  <fieldset   style="width: 400px; height:500px; color:blue;border:5px solid #0000FF; border-radius:20px;">
+  <fieldset   style="width: 400px; height:600px; color:blue;border:5px solid #0000FF; border-radius:20px;">
 
   <form action="Authentication.php" method="post">
     <table  >
@@ -19,11 +19,12 @@
     <label for="adm">Admission number:</label>&nbsp;&nbsp;&nbsp;
     <input type="text" name="adm"  required ><br><br><br>
     
-    <label for="email">Password:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <input type="mail" name="email"  required ><br><br><br>
-    <a href="register.php" style="color:#0000FF;text-decoration:none;">Create Account</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <label for="password">Password:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="password" name="password"  required ><br><br><br>
+    <a href="register.php" style="color:#0000FF;text-decoration:none;">Create Account</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <a href="password.php" style="color:#0000FF;text-decoration:none;">Forgot Password</a><br><br><br>
-    <input style="border-radius: 5px; width:100px;height: 30px;background-color: #0000FF;border:5px solid #0000FF" type="submit" name="login" value="Login">
+   <input style="border-radius: 5px; width:100px;height: 30px;background-color: #0000FF;border:5px solid #0000FF" type="submit" name="login" value="Login">&nbsp;
+   <a href="password.php" style="color:#0000FF;text-decoration:none;padding-right:10px;">staff Login</a><br><br><br>
     
     </table>
 
@@ -32,10 +33,7 @@
     </center>
 
 
-    <script>
-
-        console.log("Hello world")
-    </script>
+    
 </body>
 
 </html>

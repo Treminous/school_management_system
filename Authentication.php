@@ -41,18 +41,25 @@ else
     $sname=$values['sname'];
     $surname=$values['surname'];
     $email=$values['email'];
+    $password=$values['password'];
+    $confirm_password=$values['confirm_password'];
 //$query="INSERT INTO student ('student_id','student_fname','student_sname','student_surname',student_email) VALUES('$adm','$fname','$sname','$surname','$email')";
-$query="INSERT INTO `student` (`student_id`, `student_fname`, `student_sname`, `student_surname`, `student_email`) VALUES ('$adm','$fname','$sname','$surname','$email')";
+$query="INSERT INTO `student` (`student_id`, `student_fname`, `student_sname`, `student_surname`, `student_email`,`student_password`) VALUES ('$adm','$fname','$sname','$surname','$email','$password')";
  $result=mysqli_query(connect_to_db(),$query); 
 if($result)
    {
+    
+        if($password==$confirm_password)
+       {
+    
          echo "<script>alert('Registration succesful')</script>";
          header('Refresh:0;index.php');
-     }
-     else
+       }
+       else
      {
         echo "<script>alert('Registration failed please try again')</script>";
         header('Refresh:0 register.php');
+     }
      }
  
 

@@ -9,7 +9,7 @@
 </head>
 <body>
 <center>
-  <fieldset   style="width: 400px; height:500px; color:blue;border:5px solid #0000FF; border-radius:20px;">
+  <fieldset   style="width: 400px; height:600px; color:blue;border:5px solid #0000FF; border-radius:20px;">
 
   <form action="Authentication.php" method="POST">
     <table  >
@@ -26,6 +26,11 @@
     <input type="email" name="email"  required ><br><br><br>
     <label for="age">Age:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <input type="text" name="age"  required ><br><br><br>
+    <label for="password">Password:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="password" name="password"  required ><br><br><br>
+    <label for="password"> Confirm Password:</label>&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="password" name="confirm_password"  required ><br><br><br>
+    
     
     <a href="index.php" style="color:#0000FF;text-decoration:none;">Already registered?</a><br><br>
     <input style="border-radius: 5px; width:100px;height: 30px;background-color: #0000FF;border:5px solid #0000FF" type="submit" name="register" value="Register">
