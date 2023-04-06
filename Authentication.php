@@ -90,6 +90,7 @@ function login($values=array())
             session_start();
          $_SESSION['adm']= $adm;
         echo "<script>alert('Login successful')</script>";
+        header('Refresh:0; Home.php');
 
         }
         else
