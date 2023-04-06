@@ -2,8 +2,14 @@
 
 $array_data=$_POST;
 
-register($array_data);
-login();
+if(isset($array_data['register']))
+   {
+
+    register($array_data);
+    die();
+   }
+
+login($array_data);
 
 
 function connect_to_db()
@@ -17,8 +23,7 @@ function connect_to_db()
 function register($values=array())
 
 {
-    if(isset($_POST['register']))
-   {
+    
     // Check for existence of user
 $email=$values['email'];
 if((mysqli_num_rows(mysqli_query(connect_to_db(),"SELECT * FROM  student WHERE student_email  LIKE '$email'"))))
@@ -54,20 +59,18 @@ if($result)
 
      
 }
-}
+
 }
 
  
-function login()
+function login($values=array())
 { 
-     if(isset($_POST['login']))
-     {
+     
     
 
         //capture user data
-     $fname=$_POST['fname'];
-    $email=$_POST['email'];
-    $adm=$_POST['adm'];
+    $email=$values['email'];
+    $adm=$values['adm'];
 
     // check if user is registered
     $query1="SELECT * FROM student WHERE  student_id LIKE '$adm' AND student_email LIKE '$email'  ";
@@ -91,17 +94,6 @@ function login()
           }
    }
    
-     
-        
-     else
-        {
-            
-            
-         echo "<script>alert('User does not exist')</script>";
-          header('Refresh:0;register.php');
-            
-        }
-}
 
 
 
