@@ -9,9 +9,12 @@ $query2=mysqli_query(connect_to_db(),$query1);
 if($query2){
 
 $data=mysqli_fetch_assoc($query2);
-print_r($data);
+print_r("Hi, " .($data['student_fname']));
 
 }
+
+
+
 
 
 
