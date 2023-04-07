@@ -4,21 +4,21 @@ $array_data=$_POST;
 print_r($array_data);
 die();
 
-if(isset($array_data['btn_student_register']))
+if(isset($array_data['register']))
    {
 
     register($array_data);
    die();
    }
 
- else  if(isset($array_data['btn_student_login']))
+ else  if(isset($array_data['Login']))
    {
 
     student_login($array_data);
    die();
    }
 
-
+   
 
    
  student_login($array_data);
