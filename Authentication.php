@@ -1,15 +1,37 @@
 <?php
 
 $array_data=$_POST;
+print_r($array_data);
+die();
 
-if(isset($array_data['register']))
+if(isset($array_data['btn_student_register']))
    {
 
     register($array_data);
    die();
    }
 
-login($array_data);
+ else  if(isset($array_data['btn_student_login']))
+   {
+
+    student_login($array_data);
+   die();
+   }
+
+
+
+   
+ student_login($array_data);
+{
+    die();
+}
+if(isset($item_data['staff_register']))
+   {
+   staff_register($item_data);
+   
+   }
+
+
 
 
 function connect_to_db()
@@ -71,7 +93,7 @@ if($result)
 }
 
  
-function login($values=array())
+function student_login($values=array())
 { 
      
     
@@ -113,6 +135,62 @@ function login($values=array())
     }
     
    }
+function staff_register($item=array())
+
+{
+    
+    // Check for existence of user
+$email=$item['email'];
+$id=$item['id'];
+if((mysqli_num_rows(mysqli_query(connect_to_db(),"SELECT * FROM  staff WHERE  staff_idno LIKE '$id'  OR staff_email LIKE '$email'  "))))
+
+{
+    echo "<script>alert('User already exists')</script>";
+    header('Refresh:0;staff_login.php');
+}
+//Register new user
+else
+ 
+ {
+    
+    $fname=$item['fname'];
+    $sname=$item['sname'];
+    $surname=$item['surname'];
+    $id=$item['id'];
+    $role=$item['role'];
+    $email=$item['email'];
+    $pass=$item['password'];
+    $conpass=$item['confirm_password'];
+    $contact=$item['contact'];
+//$query="INSERT INTO student ('student_id','student_fname','student_sname','student_surname',student_email) VALUES('$adm','$fname','$sname','$surname','$email')";
+$query3="INSERT INTO `staff` ( `staff_fname`, `staff_sname`, `staff_surname`, `staff_idno`, `staff_role`, `staff_email`, `staff_password`, `staff_contact`) VALUES ( '$fname', '$sname', '$surname', '$id', '$role', '$email',  '$contact')"; 
+$results=mysqli_query(connect_to_db(),$query3); 
+if($results)
+   {
+    
+        if($pass==$conpass)
+       {
+    
+         echo "<script>alert('Registered')</script>";
+         header('Refresh:0;staff_login.php');
+       }
+    
+    
+       else
+     {
+        echo "<script>alert('Password and confirm password mismatch please try again')</script>";
+        header('Refresh:0; staff_register.php');
+     }
+    }
+    
+ 
+
+
+     
+}
+
+}
+
    
 
 
