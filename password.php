@@ -7,7 +7,7 @@
         <title>password reset</title>
     </head>
   <body>
-    <form action="Authentication.php">
+    <form action="Authentication.php" method="POST">
     <center>
         <fieldset   style="width: 400px; height:200px; color:blue;border:5px solid #0000FF; border-radius:20px;">
           <table  >
