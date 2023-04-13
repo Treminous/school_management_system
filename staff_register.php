@@ -12,7 +12,7 @@
   <fieldset   style="width: 400px; height:650px; color:blue;border:5px solid #0000FF; border-radius:20px;">
 
   <form action="Authentication.php" method="POST">
-    <table  >
+    <table  cellpadding="8" cellspacing="8" align="center" border="0" bgcolor="purple"  >
 <h1> Register Here</h1>
     
     <label for="fname">First Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

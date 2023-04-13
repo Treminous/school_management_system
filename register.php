@@ -1,4 +1,6 @@
-
+<?
+use PHPMailer\PHPMailer\PHPMailer;
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,7 +35,7 @@
     
     
     <a href="index.php" style="color:#0000FF;text-decoration:none;">Already registered?</a><br><br>
-    <input style="border-radius: 5px; width:100px;height: 30px;background-color: #0000FF;border:5px solid #0000FF" type="submit" name="register" value="Register">
+    <input style="border-radius: 5px; width:100px;height: 30px;background-color: #0000FF;border:5px solid #0000FF" type="submit" name="btn_student_register" value="student_register">
    
 </table>
 

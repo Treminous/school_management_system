@@ -1,35 +1,37 @@
 <?php
 
 $array_data=$_POST;
-print_r($array_data);
-die();
 
-if(isset($array_data['register']))
+if(isset($array_data['btn_student_register']))
    {
 
-    register($array_data);
+    student_register($array_data);
    die();
    }
 
- else  if(isset($array_data['Login']))
+   if(isset($array_data['btn_student_login']))
    {
 
     student_login($array_data);
    die();
    }
 
-   
 
-   
- student_login($array_data);
-{
-    die();
-}
-if(isset($item_data['staff_register']))
+   if(isset($array_data['staff_register']))
    {
-   staff_register($item_data);
-   
+
+    staff_register($array_data);
+   die();
    }
+
+
+
+//    if(isset($array_data['staff_login']))
+//    {
+
+//     staff_login($array_data);
+//    die();
+//    }
 
 
 
@@ -42,7 +44,7 @@ function connect_to_db()
 
 
 // register user
-function register($values=array())
+function student_register($values=array())
 
 {
     
