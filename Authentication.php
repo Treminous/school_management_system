@@ -23,6 +23,13 @@ if(isset($array_data['btn_student_register']))
     staff_register($array_data);
    die();
    }
+   if(isset($array_data['button']))
+   {
+
+    password_reset($array_data);
+   die();
+   }
+
 
 
 
@@ -197,6 +204,18 @@ if($results)
 
 
 
+function  password_reset($values=array())
+{
+ $email=$values['email'];
+ $dquery="SELECT  email FROM student WHERE student_email LIKE '$email'";
+ $dquery1=mysqli_connect(connect_to_db(),$dquery);
+ $dquery2=mysqli_query(connect_to_db(),$dquery1);
+ $dquery3=mysqli_num_rows($dquery2);
+ if($dquery3)
+ {
+    echo "connected";
+ }
+}
 
 
 

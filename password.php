@@ -17,7 +17,7 @@
             <label for="email">EmailAddress:</label>
             <input type="text" name="email"  ><br><br><br>
             <a href="index.php" style="color:#0000FF;text-decoration:none;">Login</a>&nbsp;&nbsp;&nbsp;
-            <input style="border-radius: 5px; width:100px;height: 30px;background-color: #0000FF;border:5px solid #0000FF" type="button" name="button" value="submit">
+            <input style="border-radius: 5px; width:100px;height: 30px;background-color: #0000FF;border:5px solid #0000FF" type="button" name="button"  value="Submit">
         
           </table>
         </fieldset>
